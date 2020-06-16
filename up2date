@@ -1,0 +1,15 @@
+#!/bin/bash
+_IP=$(hostname -I) || true
+
+
+printf "\nYo! Nous somme le :\n"
+date
+uptime -p
+if [ "$_IP" ]; then
+  printf "\nLocal IP Address : %s\n\n" "$_IP"
+fi
+sudo apt-get update
+sudo apt-get dist-upgrade -y
+sudo apt-get autoclean
+printf "\nUpdate! :)\n"
+exit 0

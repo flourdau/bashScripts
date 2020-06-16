@@ -1,0 +1,5 @@
+#!/bin/bash
+for i in {0..255};do
+	echo -ne "\n192.168.42.$i : "
+	ping -c 1 192.168.42.$i|grep ttl
+done
